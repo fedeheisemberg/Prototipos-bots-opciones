@@ -46,10 +46,10 @@ Base.metadata.create_all(motor)
 Sesion = sessionmaker(bind=motor)
 
 # Credenciales de HomeBroker
-broker = 203
-dni = '40728985'
-usuario = 'FedeMarti02'
-contrasena = '#Fandeieb234'
+#broker = 
+#dni = 
+#usuario = 
+#contrasena = 
 
 # DataFrame para las opciones
 datos_opciones = pd.DataFrame()
