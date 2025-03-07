@@ -206,7 +206,7 @@ def generar_informe_diario():
             MAX(fecha_hora) as ultimo_registro,
             MIN(ultimo) as precio_min,
             MAX(ultimo) as precio_max,
-            last_value(ultimo) as precio_cierre
+            (SELECT ultimo FROM opciones_ggal AS sub WHERE sub.simbolo = opciones_ggal.simbolo ORDER BY fecha_hora DESC LIMIT 1) as precio_cierre
         FROM opciones_ggal 
         WHERE date(fecha_hora) = '{hoy}'
         GROUP BY simbolo
